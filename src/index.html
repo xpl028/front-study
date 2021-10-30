@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+    <script src="../lib/Promise.js"></script>
+  </head>
+  <body>
+    <script>
+      // let p = new Promise((resolve, reject) => {
+      // resolve("ok");
+      // reject("error");
+      // setTimeout(() => {
+      //   reject("error");
+      //   resolve("ok");
+      // }, 1000);
+      // throw "error";
+      // });
+
+      const p = Promise.resolve("111");
+      const p1 = Promise.resolve(Promise.resolve(222));
+      // const p2 = Promise.resolve(Promise.reject(333));
+      const p3 = Promise.resolve("333");
+      const p4 = Promise.resolve("444");
+      const p5 = Promise.resolve("555");
+      // p.then((v) => console.log("p", v));
+      // p1.then((v) => console.log("p1", v));
+      // p2.catch((v) => console.log("p2", v));
+      const p2 = new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("333");
+        }, 1000);
+      });
+
+      const res = Promise.all([p, 87584, p2, p3, p4, p5]);
+      const rese = Promise.race([p1, p2, p3, p4]);
+      // console.log(p2);
+
+      // console.log(res);
+      res.then(
+        (value) => {
+          console.log("onResolved()1", value);
+        },
+        (error) => {
+          console.log("onRejected()1", error);
+        }
+      );
+      //   .then(
+      //     (value) => {
+      //       console.log("onResolved()2", value);
+      //     }
+      //     (error) => {
+      //       console.log("onRejected()2", error);
+      //     }
+      //   )
+
+      //   .catch((error) => {
+      //     console.log(error);
+      //     return 444;
+      //   })
+      //   .then((v) => {
+      //     console.log(v);
+      //   });
+      // console.log(p);
+    </script>
+  </body>
+</html>

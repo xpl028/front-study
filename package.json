@@ -1,0 +1,20 @@
+{
+  "name": "front-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpl028/front-study.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xpl028/front-study/issues"
+  },
+  "homepage": "https://github.com/xpl028/front-study#readme"
+}
